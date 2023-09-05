@@ -1,0 +1,20 @@
+методы fmt.Scan сохраняют каждое значение сохранённое пробелами (import fmt)
+
+Три аргумента ввода потребут что-то вроде:
+
+func main() {
+	var str1, str2, str3 string
+	fmt.Scanf("%s %s %s", &str1, &str2, &str3)
+	fmt.Printf("Ты ввёл: %s %s %s", str1, str2, str3)
+}
+
+------------------------------------------------------------------
+
+Для того чтобы сканировать строчку целиком понадобится (import ("bufio""fmt""os")):
+
+func main(){
+	scan := bufio.NewScanner(os.Stdin)
+	scan.Scan()
+	line := scan.Text()
+	fmt.Println("Вы написали: " + line)
+}
